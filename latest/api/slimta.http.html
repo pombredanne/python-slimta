@@ -62,19 +62,10 @@
 using gevent sockets. These are provided to avoid the complete re-implementation
 that ships in <a class="reference external" href="http://gevent.org/gevent.httplib.html#gevent.httplib" title="(in gevent v0.13.8)"><tt class="xref py py-mod docutils literal"><span class="pre">gevent.httplib</span></tt></a>, and to provide a more similar interface to
 other slimta libraries that use SSL/TLS.</p>
-<dl class="exception">
-<dt id="slimta.http.HttpError">
-<em class="property">exception </em><tt class="descclassname">slimta.http.</tt><tt class="descname">HttpError</tt><a class="headerlink" href="#slimta.http.HttpError" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">slimta.core.SlimtaError</span></tt></p>
-<p>Base exception for all custom HTTP exceptions.</p>
-</dd></dl>
-
 <dl class="class">
 <dt id="slimta.http.HTTPConnection">
-<em class="property">class </em><tt class="descclassname">slimta.http.</tt><tt class="descname">HTTPConnection</tt><big>(</big><em>host</em>, <em>port=None</em>, <em>strict=None</em>, <em>timeout=&lt;object object at 0x2ac805192240&gt;</em>, <em>source_address=None</em><big>)</big><a class="headerlink" href="#slimta.http.HTTPConnection" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="http://docs.python.org/library/httplib.html#httplib.HTTPConnection" title="(in Python v2.7)"><tt class="xref py py-class docutils literal"><span class="pre">httplib.HTTPConnection</span></tt></a></p>
-<p>HTTPConnection(...)</p>
-<p>Modified version of the <a class="reference external" href="http://docs.python.org/library/httplib.html#httplib.HTTPConnection" title="(in Python v2.7)"><tt class="xref py py-class docutils literal"><span class="pre">httplib.HTTPConnection</span></tt></a> class that
+<em class="property">class </em><tt class="descclassname">slimta.http.</tt><tt class="descname">HTTPConnection</tt><big>(</big><em>...</em><big>)</big><a class="headerlink" href="#slimta.http.HTTPConnection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Modified version of the <a class="reference external" href="http://docs.python.org/library/httplib.html#httplib.HTTPConnection" title="(in Python v2.7)"><tt class="xref py py-class docutils literal"><span class="pre">httplib.HTTPConnection</span></tt></a> class that
 uses gevent sockets. This attempts to avoid the complete re-implementation
 that ships in <a class="reference external" href="http://gevent.org/gevent.httplib.html#gevent.httplib" title="(in gevent v0.13.8)"><tt class="xref py py-mod docutils literal"><span class="pre">gevent.httplib</span></tt></a>.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -89,12 +80,9 @@ that ships in <a class="reference external" href="http://gevent.org/gevent.httpl
 
 <dl class="class">
 <dt id="slimta.http.HTTPSConnection">
-<em class="property">class </em><tt class="descclassname">slimta.http.</tt><tt class="descname">HTTPSConnection</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#slimta.http.HTTPSConnection" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#slimta.http.HTTPConnection" title="slimta.http.HTTPConnection"><tt class="xref py py-class docutils literal"><span class="pre">slimta.http.HTTPConnection</span></tt></a></p>
-<p>HTTPSConnection(...[, tls])</p>
-<p>Modified version of the <a class="reference external" href="http://docs.python.org/library/httplib.html#httplib.HTTPSConnection" title="(in Python v2.7)"><tt class="xref py py-class docutils literal"><span class="pre">httplib.HTTPSConnection</span></tt></a> class that
-uses gevent sockets. This attempts to avoid the complete re-implementation
-that ships in <a class="reference external" href="http://gevent.org/gevent.httplib.html#gevent.httplib" title="(in gevent v0.13.8)"><tt class="xref py py-mod docutils literal"><span class="pre">gevent.httplib</span></tt></a>.</p>
+<em class="property">class </em><tt class="descclassname">slimta.http.</tt><tt class="descname">HTTPSConnection</tt><big>(</big><em>...</em><span class="optional">[</span>, <em>tls</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#slimta.http.HTTPSConnection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Modified version of the <a class="reference external" href="http://docs.python.org/library/httplib.html#httplib.HTTPSConnection" title="(in Python v2.7)"><tt class="xref py py-class docutils literal"><span class="pre">httplib.HTTPSConnection</span></tt></a> class that
+uses gevent sockets and the more functional <tt class="docutils literal"><span class="pre">tls</span></tt> parameter.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -108,6 +96,13 @@ that ships in <a class="reference external" href="http://gevent.org/gevent.httpl
 </tr>
 </tbody>
 </table>
+</dd></dl>
+
+<dl class="exception">
+<dt id="slimta.http.HttpError">
+<em class="property">exception </em><tt class="descclassname">slimta.http.</tt><tt class="descname">HttpError</tt><a class="headerlink" href="#slimta.http.HttpError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">slimta.core.SlimtaError</span></tt></p>
+<p>Base exception for all custom HTTP exceptions.</p>
 </dd></dl>
 
 <hr class="docutils" />
