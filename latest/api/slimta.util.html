@@ -60,6 +60,23 @@
 <p>Module containing useful tools, helpers, and other features that didn&#8217;t
 belong under any other module.</p>
 <dl class="function">
+<dt id="slimta.util.monkeypatch_all">
+<tt class="descclassname">slimta.util.</tt><tt class="descname">monkeypatch_all</tt><big>(</big><em>*args</em>, <em>**kwds</em><big>)</big><a class="headerlink" href="#slimta.util.monkeypatch_all" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a context manager that monkey-patches before execution and
+reverts after execution.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>**kwargs</strong> &#8211; <p>Keyword arguments fed directly into
+<a class="reference external" href="http://gevent.org/gevent.monkey.html#gevent.monkey.patch_all" title="(in gevent v0.13.8)"><tt class="xref py py-func docutils literal"><span class="pre">gevent.monkey.patch_all()</span></tt></a>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
 <dt id="slimta.util.build_auth_from_dict">
 <tt class="descclassname">slimta.util.</tt><tt class="descname">build_auth_from_dict</tt><big>(</big><em>dict</em>, <em>lower_case=False</em>, <em>only_verify=True</em><big>)</big><a class="headerlink" href="#slimta.util.build_auth_from_dict" title="Permalink to this definition">¶</a></dt>
 <dd><p>Helper function that constructs an <a class="reference internal" href="slimta.smtp.auth.html#slimta.smtp.auth.Auth" title="slimta.smtp.auth.Auth"><tt class="xref py py-class docutils literal"><span class="pre">Auth</span></tt></a> class that authenticates a
