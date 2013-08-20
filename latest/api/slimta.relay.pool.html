@@ -69,17 +69,17 @@ delivered such that idle clients in the pool pick them up.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>pool_size</strong> &#8211; At most this many simultaneous connections will be open to
-a destination. If this limit is reached and no connections
-are idle, new attempts will block.</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>pool_size</strong> &#8211; At most this many simultaneous connections will be open
+to a destination. If this limit is reached and no
+connections are idle, new attempts will block.</td>
 </tr>
 </tbody>
 </table>
 <dl class="attribute">
 <dt id="slimta.relay.pool.RelayPool.queue">
 <tt class="descname">queue</tt><em class="property"> = None</em><a class="headerlink" href="#slimta.relay.pool.RelayPool.queue" title="Permalink to this definition">¶</a></dt>
-<dd><p>This attribute holds the queue object for providing delivery requests
-to idle clients in the pool.</p>
+<dd><p>This attribute holds the queue object for providing delivery
+requests to idle clients in the pool.</p>
 </dd></dl>
 
 <dl class="method">
@@ -130,16 +130,17 @@ requests on the client.</p>
 <dt id="slimta.relay.pool.RelayPoolClient.poll">
 <tt class="descname">poll</tt><big>(</big><big>)</big><a class="headerlink" href="#slimta.relay.pool.RelayPoolClient.poll" title="Permalink to this definition">¶</a></dt>
 <dd><p>This method can be used by clients to receive new delivery requests
-from the client pool. This method will block until a delivery request is
-received.</p>
+from the client pool. This method will block until a delivery request
+is received.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A tuple containing the <a class="reference external" href="http://gevent.org/gevent.event.html#gevent.event.AsyncResult" title="(in gevent v0.13.8)"><tt class="xref py py-class docutils literal"><span class="pre">AsyncResult</span></tt></a> and
-the <a class="reference internal" href="slimta.envelope.html#slimta.envelope.Envelope" title="slimta.envelope.Envelope"><tt class="xref py py-class docutils literal"><span class="pre">Envelope</span></tt></a> that make up a delivery
-request. If no delivery requests are received before the
-<a class="reference internal" href="#slimta.relay.pool.RelayPoolClient.idle_timeout" title="slimta.relay.pool.RelayPoolClient.idle_timeout"><tt class="xref py py-attr docutils literal"><span class="pre">idle_timeout</span></tt></a> timeout, <tt class="docutils literal"><span class="pre">(None,</span> <span class="pre">None)</span></tt> is returned.</td>
+the <a class="reference internal" href="slimta.envelope.html#slimta.envelope.Envelope" title="slimta.envelope.Envelope"><tt class="xref py py-class docutils literal"><span class="pre">Envelope</span></tt></a> that make up a
+delivery request. If no delivery requests are received before
+the <a class="reference internal" href="#slimta.relay.pool.RelayPoolClient.idle_timeout" title="slimta.relay.pool.RelayPoolClient.idle_timeout"><tt class="xref py py-attr docutils literal"><span class="pre">idle_timeout</span></tt></a> timeout, <tt class="docutils literal"><span class="pre">(None,</span> <span class="pre">None)</span></tt> is
+returned.</td>
 </tr>
 </tbody>
 </table>

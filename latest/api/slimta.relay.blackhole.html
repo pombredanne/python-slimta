@@ -58,21 +58,21 @@
             
   <div class="section" id="module-slimta.relay.blackhole">
 <span id="slimta-relay-blackhole"></span><h1>slimta.relay.blackhole<a class="headerlink" href="#module-slimta.relay.blackhole" title="Permalink to this headline">¶</a></h1>
-<p>This module contains a simple <a class="reference internal" href="slimta.relay.html#slimta.relay.Relay" title="slimta.relay.Relay"><tt class="xref py py-class docutils literal"><span class="pre">Relay</span></tt></a> class that blackholes messages, usually
-most useful for testing.</p>
+<p>This module contains a simple <a class="reference internal" href="slimta.relay.html#slimta.relay.Relay" title="slimta.relay.Relay"><tt class="xref py py-class docutils literal"><span class="pre">Relay</span></tt></a> class that blackholes messages,
+usually most useful for testing.</p>
 <dl class="class">
 <dt id="slimta.relay.blackhole.BlackholeRelay">
 <em class="property">class </em><tt class="descclassname">slimta.relay.blackhole.</tt><tt class="descname">BlackholeRelay</tt><a class="headerlink" href="#slimta.relay.blackhole.BlackholeRelay" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="slimta.relay.html#slimta.relay.Relay" title="slimta.relay.Relay"><tt class="xref py py-class docutils literal"><span class="pre">slimta.relay.Relay</span></tt></a></p>
 <p>Implements a <a class="reference internal" href="slimta.relay.html#slimta.relay.Relay" title="slimta.relay.Relay"><tt class="xref py py-class docutils literal"><span class="pre">Relay</span></tt></a> that simply blackholes messages. Relay policies may
-be added with <a class="reference internal" href="slimta.relay.html#slimta.relay.Relay.add_policy" title="slimta.relay.Relay.add_policy"><tt class="xref py py-meth docutils literal"><span class="pre">add_policy()</span></tt></a>, but they will never be
-executed or applied for messages handled by this class.</p>
+be added with <a class="reference internal" href="slimta.relay.html#slimta.relay.Relay.add_policy" title="slimta.relay.Relay.add_policy"><tt class="xref py py-meth docutils literal"><span class="pre">add_policy()</span></tt></a>, but they will never
+be executed or applied for messages handled by this class.</p>
 <dl class="method">
 <dt id="slimta.relay.blackhole.BlackholeRelay.attempt">
 <tt class="descname">attempt</tt><big>(</big><em>envelope</em>, <em>attempts</em><big>)</big><a class="headerlink" href="#slimta.relay.blackhole.BlackholeRelay.attempt" title="Permalink to this definition">¶</a></dt>
 <dd><p>Overrides the <a class="reference internal" href="slimta.relay.html#slimta.relay.Relay" title="slimta.relay.Relay"><tt class="xref py py-class docutils literal"><span class="pre">Relay</span></tt></a> <a class="reference internal" href="slimta.relay.html#slimta.relay.Relay.attempt" title="slimta.relay.Relay.attempt"><tt class="xref py py-meth docutils literal"><span class="pre">attempt()</span></tt></a> method to
-silently discard attempted messages. The <a class="reference internal" href="slimta.queue.html#slimta.queue.Queue" title="slimta.queue.Queue"><tt class="xref py py-class docutils literal"><span class="pre">Queue</span></tt></a> will see the attempt as
-a successful delivery.</p>
+silently discard attempted messages. The <a class="reference internal" href="slimta.queue.html#slimta.queue.Queue" title="slimta.queue.Queue"><tt class="xref py py-class docutils literal"><span class="pre">Queue</span></tt></a> will see the attempt
+as a successful delivery.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />

@@ -100,8 +100,8 @@ If <tt class="docutils literal"><span class="pre">secret</span></tt> is invalid 
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>authcid</strong> &#8211; The authentication identity, usually the username.</li>
-<li><strong>secret</strong> &#8211; The secret (i.e. password) string to verify for the given
-authentication and authorization identities.</li>
+<li><strong>secret</strong> &#8211; The secret (i.e. password) string to verify for the
+given authentication and authorization identities.</li>
 <li><strong>authzid</strong> &#8211; The authorization identity, if applicable.</li>
 </ul>
 </td>
@@ -208,9 +208,9 @@ unsafe mechanisms will not be advertised until TLS is negotiated.</p>
 <dl class="attribute">
 <dt id="slimta.smtp.auth.ServerMechanism.name">
 <tt class="descname">name</tt><em class="property"> = None</em><a class="headerlink" href="#slimta.smtp.auth.ServerMechanism.name" title="Permalink to this definition">¶</a></dt>
-<dd><p>This static string should be overriden by sub-classes to specify the SASL
-name that identifies this mechanism. This string will be used in the SMTP
-session. Custom mechanisms should be prefixed with <tt class="docutils literal"><span class="pre">X</span></tt>.</p>
+<dd><p>This static string should be overriden by sub-classes to specify the
+SASL name that identifies this mechanism. This string will be used in
+the SMTP session. Custom mechanisms should be prefixed with <tt class="docutils literal"><span class="pre">X</span></tt>.</p>
 </dd></dl>
 
 <dl class="attribute">
@@ -292,9 +292,9 @@ class methods.</p>
 <dl class="attribute">
 <dt id="slimta.smtp.auth.ClientMechanism.name">
 <tt class="descname">name</tt><em class="property"> = None</em><a class="headerlink" href="#slimta.smtp.auth.ClientMechanism.name" title="Permalink to this definition">¶</a></dt>
-<dd><p>This static string should be overriden by sub-classes to specify the SASL
-name that identifies this mechanism. This string will be used in the SMTP
-session. Custom mechanisms should be prefixed with <tt class="docutils literal"><span class="pre">X</span></tt>.</p>
+<dd><p>This static string should be overriden by sub-classes to specify the
+SASL name that identifies this mechanism. This string will be used in
+the SMTP session. Custom mechanisms should be prefixed with <tt class="docutils literal"><span class="pre">X</span></tt>.</p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -329,8 +329,9 @@ the response.</p>
 <dt id="slimta.smtp.auth.ClientMechanism.client_attempt">
 <em class="property">classmethod </em><tt class="descname">client_attempt</tt><big>(</big><em>io</em>, <em>authcid</em>, <em>secret</em>, <em>authzid</em><big>)</big><a class="headerlink" href="#slimta.smtp.auth.ClientMechanism.client_attempt" title="Permalink to this definition">¶</a></dt>
 <dd><p>Communicates back-and-forth with a server to negotiate
-authentication, based on the desired credentials. This class method must
-be overidden by sub-classes to be used by client-side SMTP sessions.</p>
+authentication, based on the desired credentials. This class method
+must be overidden by sub-classes to be used by client-side SMTP
+sessions.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />

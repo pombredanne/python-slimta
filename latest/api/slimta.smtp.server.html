@@ -76,7 +76,8 @@ contains the SMTP extensions the server supports.</p>
 <li><strong>socket</strong> (<a class="reference external" href="http://gevent.org/gevent.socket.html#gevent.socket.socket" title="(in gevent v0.13.8)"><tt class="xref py py-class docutils literal"><span class="pre">gevent.socket.socket</span></tt></a>) &#8211; Connected socket for the session.</li>
 <li><strong>handlers</strong> &#8211; Object with methods that will be called when
 corresponding SMTP commands are received. These methods
-can modify the <a class="reference internal" href="slimta.smtp.reply.html#slimta.smtp.reply.Reply" title="slimta.smtp.reply.Reply"><tt class="xref py py-class docutils literal"><span class="pre">Reply</span></tt></a> before the command response is sent.</li>
+can modify the <a class="reference internal" href="slimta.smtp.reply.html#slimta.smtp.reply.Reply" title="slimta.smtp.reply.Reply"><tt class="xref py py-class docutils literal"><span class="pre">Reply</span></tt></a> before the command response is
+sent.</li>
 <li><strong>auth_class</strong> &#8211; Optional <a class="reference internal" href="slimta.smtp.auth.html#slimta.smtp.auth.Auth" title="slimta.smtp.auth.Auth"><tt class="xref py py-class docutils literal"><span class="pre">Auth</span></tt></a> sub-class to enable authentication.</li>
 <li><strong>tls</strong> &#8211; Optional dictionary of TLS settings passed directly as
 keyword arguments to <a class="reference external" href="http://gevent.org/gevent.ssl.html#gevent.ssl.SSLSocket" title="(in gevent v0.13.8)"><tt class="xref py py-class docutils literal"><span class="pre">gevent.ssl.SSLSocket</span></tt></a>.</li>

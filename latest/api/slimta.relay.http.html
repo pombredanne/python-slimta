@@ -71,8 +71,8 @@ request. This request contains all the information that would usually go
 through an SMTP session as headers: the EHLO string, envelope sender and
 recipients.</p>
 <p>A <tt class="docutils literal"><span class="pre">200</span> <span class="pre">OK</span></tt> (or similar) response from the server will inform the caller
-that the message was successfully delivered. In other cases, the class makes
-its best guess about whether to raise a
+that the message was successfully delivered. In other cases, the class
+makes its best guess about whether to raise a
 <a class="reference internal" href="slimta.relay.html#slimta.relay.PermanentRelayError" title="slimta.relay.PermanentRelayError"><tt class="xref py py-class docutils literal"><span class="pre">PermanentRelayError</span></tt></a> or
 <a class="reference internal" href="slimta.relay.html#slimta.relay.TransientRelayError" title="slimta.relay.TransientRelayError"><tt class="xref py py-class docutils literal"><span class="pre">TransientRelayError</span></tt></a>. If the server&#8217;s response
 includes a <tt class="docutils literal"><span class="pre">X-Smtp-Reply</span></tt> header, it will be used. This header looks
@@ -87,8 +87,8 @@ like:</p>
 <li><strong>url</strong> &#8211; URL string to make requests against. This string is parsed with
 <a class="reference external" href="http://docs.python.org/library/urlparse.html#urlparse.urlsplit" title="(in Python v2.7)"><tt class="xref py py-func docutils literal"><span class="pre">urlparse.urlsplit()</span></tt></a> with <tt class="docutils literal"><span class="pre">'http'</span></tt> as the default
 scheme.</li>
-<li><strong>pool_size</strong> &#8211; At most this many simultaneous connections will be open to
-the destination. If this limit is reached and no
+<li><strong>pool_size</strong> &#8211; At most this many simultaneous connections will be open
+to the destination. If this limit is reached and no
 connections are idle, new attempts will block.</li>
 <li><strong>tls</strong> &#8211; Dictionary of TLS settings passed directly as keyword arguments
 to <a class="reference external" href="http://gevent.org/gevent.ssl.html#gevent.ssl.SSLSocket" title="(in gevent v0.13.8)"><tt class="xref py py-class docutils literal"><span class="pre">gevent.ssl.SSLSocket</span></tt></a>. This parameter is optional

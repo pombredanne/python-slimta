@@ -66,9 +66,9 @@ out.</p>
 <dt id="slimta.relay.smtp.static.StaticSmtpRelay">
 <em class="property">class </em><tt class="descclassname">slimta.relay.smtp.static.</tt><tt class="descname">StaticSmtpRelay</tt><big>(</big><em>host</em>, <em>port=25</em>, <em>pool_size=None</em>, <em>client_class=None</em>, <em>**client_kwargs</em><big>)</big><a class="headerlink" href="#slimta.relay.smtp.static.StaticSmtpRelay" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="slimta.relay.pool.html#slimta.relay.pool.RelayPool" title="slimta.relay.pool.RelayPool"><tt class="xref py py-class docutils literal"><span class="pre">slimta.relay.pool.RelayPool</span></tt></a></p>
-<p>Manages the relaying of messages to a specific <tt class="docutils literal"><span class="pre">host:port</span></tt>. Connections
-may be recycled when possible, to send multiple messages over a single
-channel.</p>
+<p>Manages the relaying of messages to a specific <tt class="docutils literal"><span class="pre">host:port</span></tt>.
+Connections may be recycled when possible, to send multiple messages over a
+single channel.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -76,15 +76,16 @@ channel.</p>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
 <li><strong>host</strong> &#8211; Host string to connect to.</li>
 <li><strong>port</strong> &#8211; Port to connect to.</li>
-<li><strong>pool_size</strong> &#8211; At most this many simultaneous connections will be open to
-the destination. If this limit is reached and no
+<li><strong>pool_size</strong> &#8211; At most this many simultaneous connections will be open
+to the destination. If this limit is reached and no
 connections are idle, new attempts will block.</li>
 <li><strong>tls</strong> &#8211; Optional dictionary of TLS settings passed directly as
 keyword arguments to <a class="reference external" href="http://gevent.org/gevent.ssl.html#gevent.ssl.SSLSocket" title="(in gevent v0.13.8)"><tt class="xref py py-class docutils literal"><span class="pre">gevent.ssl.SSLSocket</span></tt></a>.</li>
 <li><strong>tls_required</strong> &#8211; If given and True, it should be considered a delivery
 failure if TLS cannot be negotiated by the client.</li>
 <li><strong>connect_timeout</strong> &#8211; Timeout in seconds to wait for a client connection
-to be successful before issuing a transient failure.</li>
+to be successful before issuing a transient
+failure.</li>
 <li><strong>command_timeout</strong> &#8211; Timeout in seconds to wait for a reply to each SMTP
 command before issuing a transient failure.</li>
 <li><strong>data_timeout</strong> &#8211; Timeout in seconds to wait for a reply to message data

@@ -197,9 +197,9 @@ reply.</p>
 <dl class="method">
 <dt id="slimta.smtp.client.Client.encrypt">
 <tt class="descname">encrypt</tt><big>(</big><em>tls</em><big>)</big><a class="headerlink" href="#slimta.smtp.client.Client.encrypt" title="Permalink to this definition">¶</a></dt>
-<dd><p>Encrypts the underlying socket with the information given by <tt class="docutils literal"><span class="pre">tls</span></tt>.
-This call should only be used directly against servers that expect to be
-immediately encrypted. If encryption is negotiated with
+<dd><p>Encrypts the underlying socket with the information given by
+<tt class="docutils literal"><span class="pre">tls</span></tt>.  This call should only be used directly against servers that
+expect to be immediately encrypted. If encryption is negotiated with
 <a class="reference internal" href="#slimta.smtp.client.Client.starttls" title="slimta.smtp.client.Client.starttls"><tt class="xref py py-meth docutils literal"><span class="pre">starttls()</span></tt></a> there is no need to call this method.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -237,8 +237,8 @@ another call to <a class="reference internal" href="#slimta.smtp.client.Client.e
 <tt class="descname">auth</tt><big>(</big><em>authcid</em>, <em>secret</em>, <em>authzid=None</em>, <em>mechanism=None</em><big>)</big><a class="headerlink" href="#slimta.smtp.client.Client.auth" title="Permalink to this definition">¶</a></dt>
 <dd><p>Negotiates authentication for the current SMTP session. This
 transaction may involve several back-and-forth packets to the server,
-depending on the SASL mechanism used, and this function will only return
-once all have completed.</p>
+depending on the SASL mechanism used, and this function will only
+return once all have completed.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -248,8 +248,9 @@ once all have completed.</p>
 <li><strong>secret</strong> &#8211; The secret (i.e. password) string to send for the given
 authentication and authorization identities.</li>
 <li><strong>authzid</strong> &#8211; The authorization identity, if applicable.</li>
-<li><strong>mechanism</strong> (<a class="reference internal" href="slimta.smtp.auth.html#slimta.smtp.auth.ClientMechanism" title="slimta.smtp.auth.ClientMechanism"><tt class="xref py py-class docutils literal"><span class="pre">ClientMechanism</span></tt></a>) &#8211; Force the usage of the given SASL mechanism sub-class.
-If not given, the best mechanism available is used.</li>
+<li><strong>mechanism</strong> (<a class="reference internal" href="slimta.smtp.auth.html#slimta.smtp.auth.ClientMechanism" title="slimta.smtp.auth.ClientMechanism"><tt class="xref py py-class docutils literal"><span class="pre">ClientMechanism</span></tt></a>) &#8211; Force the usage of the given SASL mechanism
+sub-class.  If not given, the best mechanism
+available is used.</li>
 </ul>
 </td>
 </tr>
@@ -387,8 +388,8 @@ are pending.</p>
 <dl class="method">
 <dt id="slimta.smtp.client.Client.quit">
 <tt class="descname">quit</tt><big>(</big><big>)</big><a class="headerlink" href="#slimta.smtp.client.Client.quit" title="Permalink to this definition">¶</a></dt>
-<dd><p>Sends the QUIT command and waits for the response. After the response
-is received (should be 221) the socket should be closed.</p>
+<dd><p>Sends the QUIT command and waits for the response. After the
+response is received (should be 221) the socket should be closed.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />

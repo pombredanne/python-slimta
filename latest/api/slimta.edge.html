@@ -71,8 +71,9 @@ directly inherit <a class="reference internal" href="#slimta.edge.EdgeServer" ti
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>queue</strong> &#8211; <a class="reference internal" href="slimta.queue.html#slimta.queue.Queue" title="slimta.queue.Queue"><tt class="xref py py-class docutils literal"><span class="pre">Queue</span></tt></a> (Or <a class="reference internal" href="slimta.queue.html#slimta.queue.Queue" title="slimta.queue.Queue"><tt class="xref py py-class docutils literal"><span class="pre">Queue</span></tt></a>-like) object that will take responsibility
-for delivery of messages received by the <a class="reference internal" href="#slimta.edge.Edge" title="slimta.edge.Edge"><tt class="xref py py-class docutils literal"><span class="pre">Edge</span></tt></a>.</li>
+<li><strong>queue</strong> &#8211; <a class="reference internal" href="slimta.queue.html#slimta.queue.Queue" title="slimta.queue.Queue"><tt class="xref py py-class docutils literal"><span class="pre">Queue</span></tt></a> (Or <a class="reference internal" href="slimta.queue.html#slimta.queue.Queue" title="slimta.queue.Queue"><tt class="xref py py-class docutils literal"><span class="pre">Queue</span></tt></a>-like) object that will take
+responsibility for delivery of messages received by the
+<a class="reference internal" href="#slimta.edge.Edge" title="slimta.edge.Edge"><tt class="xref py py-class docutils literal"><span class="pre">Edge</span></tt></a>.</li>
 <li><strong>hostname</strong> &#8211; String identifying the local machine, stamped to each
 received message in its
 <a class="reference internal" href="slimta.envelope.html#slimta.envelope.Envelope.receiver" title="slimta.envelope.Envelope.receiver"><tt class="xref py py-attr docutils literal"><span class="pre">receiver</span></tt></a> attribute for
@@ -115,7 +116,8 @@ corresponding ID string or <a class="reference internal" href="slimta.queue.html
 <p>This class implements a <a class="reference external" href="http://gevent.org/gevent.html#gevent.Greenlet" title="(in gevent v0.13.8)"><tt class="xref py py-class docutils literal"><span class="pre">Greenlet</span></tt></a> serving a
 <a class="reference external" href="http://gevent.org/gevent.server.html#gevent.server.StreamServer" title="(in gevent v0.13.8)"><tt class="xref py py-class docutils literal"><span class="pre">StreamServer</span></tt></a> until killed. Connections are accepted
 on the socket and passed to <a class="reference internal" href="#slimta.edge.EdgeServer.handle" title="slimta.edge.EdgeServer.handle"><tt class="xref py py-meth docutils literal"><span class="pre">handle()</span></tt></a>, which should be overriden
-by implementers of this base class. The socket will be closed automatically.</p>
+by implementers of this base class. The socket will be closed
+automatically.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />

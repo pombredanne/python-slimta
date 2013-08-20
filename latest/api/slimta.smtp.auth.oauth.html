@@ -59,16 +59,17 @@
             
   <div class="section" id="module-slimta.smtp.auth.oauth">
 <span id="slimta-smtp-auth-oauth"></span><h1>slimta.smtp.auth.oauth<a class="headerlink" href="#module-slimta.smtp.auth.oauth" title="Permalink to this headline">¶</a></h1>
-<p>Module containing the definition of the SASL <a class="reference external" href="https://developers.google.com/gmail/xoauth2_protocol">XOAUTH2</a>, used by <a class="reference external" href="http://tools.ietf.org/html/draft-ietf-oauth-v2-22">OAuth 2.0</a>
-systems to authenticate using access tokens.</p>
+<p>Module containing the definition of the SASL <a class="reference external" href="https://developers.google.com/gmail/xoauth2_protocol">XOAUTH2</a>, used by <a class="reference external" href="http://tools.ietf.org/html/draft-ietf-oauth-v2-22">OAuth
+2.0</a> systems to authenticate using access tokens.</p>
 <dl class="class">
 <dt id="slimta.smtp.auth.oauth.OAuth2">
 <em class="property">class </em><tt class="descclassname">slimta.smtp.auth.oauth.</tt><tt class="descname">OAuth2</tt><a class="headerlink" href="#slimta.smtp.auth.oauth.OAuth2" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="slimta.smtp.auth.html#slimta.smtp.auth.ClientMechanism" title="slimta.smtp.auth.ClientMechanism"><tt class="xref py py-class docutils literal"><span class="pre">slimta.smtp.auth.ClientMechanism</span></tt></a></p>
 <p><tt class="docutils literal"><span class="pre">XOAUTH2</span></tt> authentication mechanism. Used by email servers that provide
 OAuth 2.0 authentication, such as Gmail. Using their credentials, clients
-will receive a temporary access token string from the identity service. This
-token string is then used by <tt class="docutils literal"><span class="pre">XOAUTH2</span></tt> to authenticate the SMTP session.</p>
+will receive a temporary access token string from the identity service.
+This token string is then used by <tt class="docutils literal"><span class="pre">XOAUTH2</span></tt> to authenticate the SMTP
+session.</p>
 <p>This mechanism is only available for client-side authentication.</p>
 <dl class="attribute">
 <dt id="slimta.smtp.auth.oauth.OAuth2.name">

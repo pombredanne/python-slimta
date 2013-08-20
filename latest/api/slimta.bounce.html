@@ -88,18 +88,33 @@ this should usually be an empty string.</p>
 
 <dl class="attribute">
 <dt id="slimta.bounce.Bounce.header_template">
-<tt class="descname">header_template</tt><em class="property"> = 'From: MAILER-DAEMON\r\nTo: {sender}\r\nSubject: Undelivered Mail Returned to Sender\r\nAuto-Submitted: auto-replied\r\nMIME-Version: 1.0\r\nContent-Type: multipart/report; report-type=delivery-status; \r\n    boundary=&quot;{boundary}&quot;\r\nContent-Transfer-Encoding: 7bit\r\n\r\nThis is a multi-part message in MIME format.\r\n\r\n--{boundary}\r\nContent-Type: text/plain\r\n\r\nDelivery failed.\r\n\r\nDestination host responded:\r\n{code} {message}\r\n\r\n--{boundary}\r\nContent-Type: message/delivery-status\r\n\r\nRemote-MTA: dns; {client_name} [{client_ip}]\r\nDiagnostic-Code: {protocol}; {code} {message}\r\n\r\n--{boundary}\r\nContent-Type: message/rfc822\r\n\r\n'</em><a class="headerlink" href="#slimta.bounce.Bounce.header_template" title="Permalink to this definition">¶</a></dt>
-<dd><p>Template to use for the bounce message data, inserted directly before the
-original message data. The template is processed with <a class="reference external" href="http://docs.python.org/library/stdtypes.html#str.format" title="(in Python v2.7)"><tt class="xref py py-meth docutils literal"><span class="pre">str.format()</span></tt></a>
-with the following keys:</p>
-<ul class="simple">
-<li><tt class="docutils literal"><span class="pre">boundary</span></tt> &#8211; A randomly generated MIME boundary string.</li>
-<li><tt class="docutils literal"><span class="pre">sender</span></tt> &#8211; The sender of the original message.</li>
-<li><tt class="docutils literal"><span class="pre">client_name</span></tt> &#8211; The hostname of the original message sending client.</li>
-<li><tt class="docutils literal"><span class="pre">client_ip</span></tt> &#8211; The IP address of the original message sending client.</li>
-<li><tt class="docutils literal"><span class="pre">protocol</span></tt> &#8211; The protocol used to deliver the original message.</li>
-<li><tt class="docutils literal"><span class="pre">code</span></tt> &#8211; The SMTP reply code that caused the message failure.</li>
-<li><tt class="docutils literal"><span class="pre">message</span></tt> &#8211; The SMTP reply message that caused the message failure.</li>
+<tt class="descname">header_template</tt><em class="property"> = 'From: MAILER-DAEMON\r\nTo: {sender}\r\nSubject: Undelivered Mail Returned to Sender\r\nAuto-Submitted: auto-replied\r\nMIME-Version: 1.0\r\nContent-Type: multipart/report; report-type=delivery-status;\r\n    boundary=&quot;{boundary}&quot;\r\nContent-Transfer-Encoding: 7bit\r\n\r\nThis is a multi-part message in MIME format.\r\n\r\n--{boundary}\r\nContent-Type: text/plain\r\n\r\nDelivery failed.\r\n\r\nDestination host responded:\r\n{code} {message}\r\n\r\n--{boundary}\r\nContent-Type: message/delivery-status\r\n\r\nRemote-MTA: dns; {client_name} [{client_ip}]\r\nDiagnostic-Code: {protocol}; {code} {message}\r\n\r\n--{boundary}\r\nContent-Type: message/rfc822\r\n\r\n'</em><a class="headerlink" href="#slimta.bounce.Bounce.header_template" title="Permalink to this definition">¶</a></dt>
+<dd><p>Template to use for the bounce message data, inserted directly before
+the original message data. The template is processed with
+<a class="reference external" href="http://docs.python.org/library/stdtypes.html#str.format" title="(in Python v2.7)"><tt class="xref py py-meth docutils literal"><span class="pre">str.format()</span></tt></a> with the following keys:</p>
+<ul>
+<li><p class="first"><tt class="docutils literal"><span class="pre">boundary</span></tt> &#8211; A randomly generated MIME boundary string.</p>
+</li>
+<li><p class="first"><tt class="docutils literal"><span class="pre">sender</span></tt> &#8211; The sender of the original message.</p>
+</li>
+<li><dl class="first docutils">
+<dt><tt class="docutils literal"><span class="pre">client_name</span></tt> &#8211; The hostname of the original message sending</dt>
+<dd><p class="first last">client.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><tt class="docutils literal"><span class="pre">client_ip</span></tt> &#8211; The IP address of the original message sending</dt>
+<dd><p class="first last">client.</p>
+</dd>
+</dl>
+</li>
+<li><p class="first"><tt class="docutils literal"><span class="pre">protocol</span></tt> &#8211; The protocol used to deliver the original message.</p>
+</li>
+<li><p class="first"><tt class="docutils literal"><span class="pre">code</span></tt> &#8211; The SMTP reply code that caused the message failure.</p>
+</li>
+<li><p class="first"><tt class="docutils literal"><span class="pre">message</span></tt> &#8211; The SMTP reply message that caused the message failure.</p>
+</li>
 </ul>
 </dd></dl>
 
@@ -113,8 +128,9 @@ is processed the same way as <tt class="docutils literal"><span class="pre">head
 <dl class="attribute">
 <dt id="slimta.bounce.Bounce.client">
 <tt class="descname">client</tt><em class="property"> = {'ip': '127.0.0.1', 'host': 'localhost', 'name': 'postmaster'}</em><a class="headerlink" href="#slimta.bounce.Bounce.client" title="Permalink to this definition">¶</a></dt>
-<dd><p>The client information used when sending bounce messages. Injected as the
-<a class="reference internal" href="slimta.envelope.html#slimta.envelope.Envelope.client" title="slimta.envelope.Envelope.client"><tt class="xref py py-attr docutils literal"><span class="pre">client</span></tt></a> attribute of bounce messages.</p>
+<dd><p>The client information used when sending bounce messages. Injected as
+the <a class="reference internal" href="slimta.envelope.html#slimta.envelope.Envelope.client" title="slimta.envelope.Envelope.client"><tt class="xref py py-attr docutils literal"><span class="pre">client</span></tt></a> attribute of bounce
+messages.</p>
 </dd></dl>
 
 <dl class="attribute">

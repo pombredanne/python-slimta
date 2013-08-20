@@ -77,9 +77,9 @@ storage mechanism for <a class="reference internal" href="#slimta.queue.Queue" t
 <dl class="method">
 <dt id="slimta.queue.QueueStorage.write">
 <tt class="descname">write</tt><big>(</big><em>envelope</em>, <em>timestamp</em><big>)</big><a class="headerlink" href="#slimta.queue.QueueStorage.write" title="Permalink to this definition">¶</a></dt>
-<dd><p>Writes the given envelope to storage, along with the timestamp of its
-next delivery attempt. The number of delivery attempts asociated with
-the message should start at zero.</p>
+<dd><p>Writes the given envelope to storage, along with the timestamp of
+its next delivery attempt. The number of delivery attempts asociated
+with the message should start at zero.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -201,9 +201,9 @@ been successfully delivered or delivery has permanently failed.</p>
 <dt id="slimta.queue.Queue">
 <em class="property">class </em><tt class="descclassname">slimta.queue.</tt><tt class="descname">Queue</tt><big>(</big><em>store</em>, <em>relay</em>, <em>backoff=None</em>, <em>bounce_factory=None</em>, <em>store_pool=None</em>, <em>relay_pool=None</em><big>)</big><a class="headerlink" href="#slimta.queue.Queue" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">gevent.greenlet.Greenlet</span></tt></p>
-<p>Manages the queue of <a class="reference internal" href="slimta.envelope.html#slimta.envelope.Envelope" title="slimta.envelope.Envelope"><tt class="xref py py-class docutils literal"><span class="pre">Envelope</span></tt></a> objects waiting for delivery. This is not
-a standard FIFO queue, a message&#8217;s place in the queue depends entirely on
-the timestamp of its next delivery attempt.</p>
+<p>Manages the queue of <a class="reference internal" href="slimta.envelope.html#slimta.envelope.Envelope" title="slimta.envelope.Envelope"><tt class="xref py py-class docutils literal"><span class="pre">Envelope</span></tt></a> objects waiting for delivery. This is
+not a standard FIFO queue, a message&#8217;s place in the queue depends entirely
+on the timestamp of its next delivery attempt.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -218,12 +218,12 @@ permanently failed. The default backoff function simply
 returns <tt class="docutils literal"><span class="pre">None</span></tt> and messages are never retried.</li>
 <li><strong>bounce_factory</strong> &#8211; Function that produces a <a class="reference internal" href="slimta.bounce.html#slimta.bounce.Bounce" title="slimta.bounce.Bounce"><tt class="xref py py-class docutils literal"><span class="pre">Bounce</span></tt></a> object given the
 same parameters as the <a class="reference internal" href="slimta.bounce.html#slimta.bounce.Bounce" title="slimta.bounce.Bounce"><tt class="xref py py-class docutils literal"><span class="pre">Bounce</span></tt></a> constructor. If the
-function returns <tt class="docutils literal"><span class="pre">None</span></tt>, no bounce is delivered. By
-default, a new <a class="reference internal" href="slimta.bounce.html#slimta.bounce.Bounce" title="slimta.bounce.Bounce"><tt class="xref py py-class docutils literal"><span class="pre">Bounce</span></tt></a> is created in every case.</li>
-<li><strong>store_pool</strong> &#8211; Number of simultaneous operations performable against the
-<tt class="docutils literal"><span class="pre">store</span></tt> object. Default is unlimited.</li>
-<li><strong>relay_pool</strong> &#8211; Number of simultaneous operations performable against the
-<tt class="docutils literal"><span class="pre">relay</span></tt> object. Default is unlimited.</li>
+function returns <tt class="docutils literal"><span class="pre">None</span></tt>, no bounce is delivered.
+By default, a new <a class="reference internal" href="slimta.bounce.html#slimta.bounce.Bounce" title="slimta.bounce.Bounce"><tt class="xref py py-class docutils literal"><span class="pre">Bounce</span></tt></a> is created in every case.</li>
+<li><strong>store_pool</strong> &#8211; Number of simultaneous operations performable against
+the <tt class="docutils literal"><span class="pre">store</span></tt> object. Default is unlimited.</li>
+<li><strong>relay_pool</strong> &#8211; Number of simultaneous operations performable against
+the <tt class="docutils literal"><span class="pre">relay</span></tt> object. Default is unlimited.</li>
 </ul>
 </td>
 </tr>
@@ -248,9 +248,9 @@ to storage.</p>
 <dt id="slimta.queue.Queue.enqueue">
 <tt class="descname">enqueue</tt><big>(</big><em>envelope</em><big>)</big><a class="headerlink" href="#slimta.queue.Queue.enqueue" title="Permalink to this definition">¶</a></dt>
 <dd><p>Drops a new message in the queue for delivery. The first delivery
-attempt is made immediately (depending on relay pool availability). This
-method is not typically called directly, <a class="reference internal" href="slimta.edge.html#slimta.edge.Edge" title="slimta.edge.Edge"><tt class="xref py py-class docutils literal"><span class="pre">Edge</span></tt></a> objects use it when they
-receive new messages.</p>
+attempt is made immediately (depending on relay pool availability).
+This method is not typically called directly, <a class="reference internal" href="slimta.edge.html#slimta.edge.Edge" title="slimta.edge.Edge"><tt class="xref py py-class docutils literal"><span class="pre">Edge</span></tt></a> objects use it
+when they receive new messages.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />

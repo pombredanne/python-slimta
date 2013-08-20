@@ -59,11 +59,11 @@
             
   <div class="section" id="module-slimta.relay.smtp.mx">
 <span id="slimta-relay-smtp-mx"></span><h1>slimta.relay.smtp.mx<a class="headerlink" href="#module-slimta.relay.smtp.mx" title="Permalink to this headline">¶</a></h1>
-<p>Implements an algorithm to query and pick an MX record to delivery a message.
-The MX record is calculated by pulling the domain-name from the recipient&#8217;s
-email address (or first recipient, if multiple) and querying DNS for the domain
-MX email routing records. If multiple records exist, the pick is made by using
-the number of delivery attempts to cycle through the options.</p>
+<p>Implements an algorithm to query and pick an MX record to delivery a
+message.  The MX record is calculated by pulling the domain-name from the
+recipient&#8217;s email address (or first recipient, if multiple) and querying DNS
+for the domain MX email routing records. If multiple records exist, the pick is
+made by using the number of delivery attempts to cycle through the options.</p>
 <dl class="class">
 <dt id="slimta.relay.smtp.mx.MxSmtpRelay">
 <em class="property">class </em><tt class="descclassname">slimta.relay.smtp.mx.</tt><tt class="descname">MxSmtpRelay</tt><big>(</big><em>**client_kwargs</em><big>)</big><a class="headerlink" href="#slimta.relay.smtp.mx.MxSmtpRelay" title="Permalink to this definition">¶</a></dt>
@@ -83,7 +83,8 @@ keyword arguments to <a class="reference external" href="http://gevent.org/geven
 <li><strong>tls_required</strong> &#8211; If given and True, it should be considered a delivery
 failure if TLS cannot be negotiated by the client.</li>
 <li><strong>connect_timeout</strong> &#8211; Timeout in seconds to wait for a client connection
-to be successful before issuing a transient failure.</li>
+to be successful before issuing a transient
+failure.</li>
 <li><strong>command_timeout</strong> &#8211; Timeout in seconds to wait for a reply to each SMTP
 command before issuing a transient failure.</li>
 <li><strong>data_timeout</strong> &#8211; Timeout in seconds to wait for a reply to message data
