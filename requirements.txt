@@ -1,3 +1,5 @@
+sphinx
+cloud_sptheme
 -e git+git@github.com:slimta/python-slimta.git@master#egg=python_slimta-dev
 -e git+git@github.com:slimta/python-slimta-celeryqueue.git@master#egg=python_slimta_celeryqueue-dev
 -e git+git@github.com:slimta/python-slimta-diskstorage.git@master#egg=python_slimta_diskstorage-dev
