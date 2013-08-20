@@ -122,14 +122,12 @@ This is how applications like <a class="reference external" href="http://www.cou
 messages. This method is modeled off the <a class="reference external" href="http://www.postfix.org/pipe.8.html">pipe daemon</a> from postfix.  This
 type of relay is provided in the <a class="reference internal" href="../api/extra.piperelay.html#module-slimta.piperelay" title="slimta.piperelay"><tt class="xref py py-mod docutils literal"><span class="pre">slimta.piperelay</span></tt></a> module. Here&#8217;s an
 example of delivery to the <tt class="docutils literal"><span class="pre">maildrop</span></tt> command:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">slimta.relay.maildrop</span> <span class="kn">import</span> <span class="n">MaildropRelay</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">slimta.piperelay</span> <span class="kn">import</span> <span class="n">MaildropRelay</span>
 <span class="n">relay</span> <span class="o">=</span> <span class="n">MaildropRelay</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="mf">10.0</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>The <a class="reference internal" href="../api/extra.piperelay.html#module-slimta.piperelay" title="slimta.piperelay"><tt class="xref py py-mod docutils literal"><span class="pre">slimta.piperelay</span></tt></a> module is packaged separately as an extension and
-can be installed with:</p>
-<div class="highlight-python"><pre>pip install python-slimta-piperelay</pre>
-</div>
+<p>The <a class="reference internal" href="../api/extra.piperelay.html#module-slimta.piperelay" title="slimta.piperelay"><tt class="xref py py-mod docutils literal"><span class="pre">slimta.piperelay</span></tt></a> module is packaged separately as an extension as
+described in <a class="reference internal" href="extensions.html#pipe-relay"><em>External Process Delivery</em></a>.</p>
 </div>
 </div>
 
