@@ -93,10 +93,10 @@ once:</p>
 </div>
 <div class="section" id="smtp-mx-relaying">
 <span id="relay-smtp-mx"></span><h2>SMTP MX Relaying<a class="headerlink" href="#smtp-mx-relaying" title="Permalink to this headline">¶</a></h2>
-<p>Email messages destined for a recipient address hosted elsewhere on the Internet
-are relayed by querying the recipient domain&#8217;s MX records. The result is a
-prioritized list of hostnames that should be considered the next hop for the
-message. The highest priority (given by the lowest MX preference number)
+<p>Email messages destined for a recipient address hosted elsewhere on the
+Internet are relayed by querying the recipient domain&#8217;s MX records. The result
+is a prioritized list of hostnames that should be considered the next hop for
+the message. The highest priority (given by the lowest MX preference number)
 hostname is tried first, and lower priority hostnames should be tried
 subsequently. MX relaying always uses port 25.</p>
 <p>MX relaying can be done with the <a class="reference internal" href="../api/slimta.relay.smtp.mx.html#slimta.relay.smtp.mx.MxSmtpRelay" title="slimta.relay.smtp.mx.MxSmtpRelay"><tt class="xref py py-class docutils literal"><span class="pre">MxSmtpRelay</span></tt></a>
@@ -107,10 +107,30 @@ destination, so that connections are re-used:</p>
 <span class="n">relay</span> <span class="o">=</span> <span class="n">MxSmtpRelay</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>Recipient domains can be configured to ignore MX records and permanently deliver
-to a certain hostname using the
+<p>Recipient domains can be configured to ignore MX records and permanently
+deliver to a certain hostname using the
 <a class="reference internal" href="../api/slimta.relay.smtp.mx.html#slimta.relay.smtp.mx.MxSmtpRelay.force_mx" title="slimta.relay.smtp.mx.MxSmtpRelay.force_mx"><tt class="xref py py-meth docutils literal"><span class="pre">force_mx()</span></tt></a> method:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">relay</span><span class="o">.</span><span class="n">force_mx</span><span class="p">(</span><span class="s">&#39;example.com&#39;</span><span class="p">,</span> <span class="s">&#39;smarthost.example.com&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="http-relaying">
+<span id="relay-http"></span><h2>HTTP Relaying<a class="headerlink" href="#http-relaying" title="Permalink to this headline">¶</a></h2>
+<p>Similar to the <a class="reference internal" href="edge.html#edge-http"><em>HTTP Edge</em></a>, HTTP can be used to relay messages
+as the data payload of a request. The EHLO, sender, and recipients information
+usually transferred in the SMTP request are sent as headers in the request.
+Refer to the <a class="reference internal" href="../api/slimta.relay.http.html#module-slimta.relay.http" title="slimta.relay.http"><tt class="xref py py-mod docutils literal"><span class="pre">slimta.relay.http</span></tt></a> module for more information on how this
+request is constructed.</p>
+<p>If the remote host is an <a class="reference internal" href="edge.html#edge-http"><em>HTTP Edge</em></a>, the response to the
+request will most likely have an <tt class="docutils literal"><span class="pre">X-Smtp-Reply</span></tt> header that is used as the
+message delivery <a class="reference internal" href="../api/slimta.smtp.reply.html#slimta.smtp.reply.Reply" title="slimta.smtp.reply.Reply"><tt class="xref py py-class docutils literal"><span class="pre">Reply</span></tt></a> when returning to the queue. If the response does not
+have this header, then <a class="reference internal" href="../api/slimta.relay.html#slimta.relay.PermanentRelayError" title="slimta.relay.PermanentRelayError"><tt class="xref py py-class docutils literal"><span class="pre">PermanentRelayError</span></tt></a> is raised for
+<tt class="docutils literal"><span class="pre">4XX</span></tt> codes and <a class="reference internal" href="../api/slimta.relay.html#slimta.relay.TransientRelayError" title="slimta.relay.TransientRelayError"><tt class="xref py py-class docutils literal"><span class="pre">TransientRelayError</span></tt></a> is raised for
+<tt class="docutils literal"><span class="pre">5XX</span></tt> codes.</p>
+<p>HTTP relays are set up by creating a <a class="reference internal" href="../api/slimta.relay.http.html#slimta.relay.http.HttpRelay" title="slimta.relay.http.HttpRelay"><tt class="xref py py-class docutils literal"><span class="pre">HttpRelay</span></tt></a>
+object:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">slimta.relay.http</span> <span class="kn">import</span> <span class="n">HttpRelay</span>
+<span class="n">relay</span> <span class="o">=</span> <span class="n">HttpRelay</span><span class="p">(</span><span class="s">&#39;http://example.com:8025/messages/&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -146,6 +166,7 @@ described in <a class="reference internal" href="extensions.html#pipe-relay"><em
 <li><a class="reference internal" href="#">Relay Services</a><ul>
 <li><a class="reference internal" href="#smtp-smart-host-relaying">SMTP Smart-Host Relaying</a></li>
 <li><a class="reference internal" href="#smtp-mx-relaying">SMTP MX Relaying</a></li>
+<li><a class="reference internal" href="#http-relaying">HTTP Relaying</a></li>
 <li><a class="reference internal" href="#external-process-relaying">External Process Relaying</a></li>
 </ul>
 </li>
