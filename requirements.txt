@@ -5,4 +5,5 @@ cloud_sptheme
 -e git+git@github.com:slimta/python-slimta-diskstorage.git@master#egg=python_slimta_diskstorage-dev
 -e git+git@github.com:slimta/python-slimta-piperelay.git@master#egg=python_slimta_piperelay-dev
 -e git+git@github.com:slimta/python-slimta-spf.git@master#egg=python_slimta_spf-dev
+-e git+git@github.com:slimta/python-slimta-redisstorage.git@master#egg=python_slimta_redisstorage-dev
 -e git+git@github.com:slimta/slimta.git@master#egg=slimta-dev
