@@ -119,6 +119,41 @@ by the same uuid string as its corresponding envelope file, but with the suffix
 </pre></div>
 </div>
 </div>
+<div class="section" id="redis-storage">
+<span id="id2"></span><h2>Redis Storage<a class="headerlink" href="#redis-storage" title="Permalink to this headline">¶</a></h2>
+<p>Taking advantage of the advanced data structures and ease of use of the <a class="reference external" href="http://redis.io/">redis</a>
+database, the <a class="reference internal" href="../api/extra.redisstorage.html#module-slimta.redisstorage" title="slimta.redisstorage"><tt class="xref py py-mod docutils literal"><span class="pre">redisstorage</span></tt></a> extension simply creates a hash key
+for each queued message, containing its delivery metadata and a pickled version
+of the <a class="reference internal" href="../api/slimta.envelope.html#slimta.envelope.Envelope" title="slimta.envelope.Envelope"><tt class="xref py py-class docutils literal"><span class="pre">Envelope</span></tt></a>.</p>
+<p>The keys created in redis will look like the following:</p>
+<div class="highlight-python"><pre>redis 127.0.0.1:6379&gt; KEYS *
+1) "slimta:28195d3b0a5847f9853e5b0173c85151"
+2) "slimta:5ebb94976cd94b418d6063a2ca4cbf8f"
+3) "slimta:d33879cf66244472b983770ba762e07b"
+redis 127.0.0.1:6379&gt;</pre>
+</div>
+<p>Each key is a hash that will look something like:</p>
+<div class="highlight-python"><pre>redis 127.0.0.1:6379&gt; HGETALL slimta:d33879cf66244472b983770ba762e07b
+1) "attempts"
+2) "2"
+3) "timestamp"
+4) "1377121655"
+5) "envelope"
+6) "..."
+redis 127.0.0.1:6379&gt;</pre>
+</div>
+<p>On startup, the <a class="reference internal" href="../api/slimta.queue.html#slimta.queue.Queue" title="slimta.queue.Queue"><tt class="xref py py-class docutils literal"><span class="pre">Queue</span></tt></a> will scan the keyspace (using the customizable prefix
+<tt class="docutils literal"><span class="pre">slimta:</span></tt>) and populate the queue with existing messages for delivery.</p>
+<p>To install this extension:</p>
+<div class="highlight-python"><pre>$ pip install python-slimta-redisstorage</pre>
+</div>
+<p>And to initialize a new <a class="reference internal" href="../api/extra.redisstorage.html#slimta.redisstorage.RedisStorage" title="slimta.redisstorage.RedisStorage"><tt class="xref py py-class docutils literal"><span class="pre">RedisStorage</span></tt></a>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">slimta.redisstorage</span> <span class="kn">import</span> <span class="n">RedisStorage</span>
+
+<span class="n">store</span> <span class="o">=</span> <span class="n">RedisStorage</span><span class="p">(</span><span class="s">&#39;redis.example.com&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
 <div class="section" id="celery-distributed-queuing">
 <span id="celery-queue"></span><h2>Celery Distributed Queuing<a class="headerlink" href="#celery-distributed-queuing" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="why-it-s-better">
@@ -249,6 +284,7 @@ want to act upon. These results are:</p>
 <li><a class="reference internal" href="#">Extensions</a><ul>
 <li><a class="reference internal" href="#external-process-delivery">External Process Delivery</a></li>
 <li><a class="reference internal" href="#disk-storage">Disk Storage</a></li>
+<li><a class="reference internal" href="#redis-storage">Redis Storage</a></li>
 <li><a class="reference internal" href="#celery-distributed-queuing">Celery Distributed Queuing</a><ul>
 <li><a class="reference internal" href="#why-it-s-better">Why It&#8217;s Better</a></li>
 <li><a class="reference internal" href="#setting-it-up">Setting It Up</a></li>

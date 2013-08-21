@@ -8,7 +8,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>slimta.diskstorage &mdash; slimta 0.3.8 documentation</title>
+    <title>slimta.redisstorage &mdash; slimta 0.3.8 documentation</title>
     
     <link rel="stylesheet" href="../_static/cloud.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -30,8 +30,8 @@
     <script type="text/javascript" src="../_static/cloud.js"></script>
     <link rel="top" title="slimta 0.3.8 documentation" href="../index.html" />
     <link rel="up" title="Available Extensions" href="extra.html" />
-    <link rel="next" title="slimta.redisstorage" href="extra.redisstorage.html" />
-    <link rel="prev" title="Available Extensions" href="extra.html" /> 
+    <link rel="next" title="slimta.piperelay" href="extra.piperelay.html" />
+    <link rel="prev" title="slimta.diskstorage" href="extra.diskstorage.html" /> 
         <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
@@ -47,10 +47,10 @@
           <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> &nbsp; &nbsp;</li>
         <li class="right" >
-          <a href="extra.redisstorage.html" title="slimta.redisstorage"
+          <a href="extra.piperelay.html" title="slimta.piperelay"
              accesskey="N">next</a> &nbsp; &nbsp;</li>
         <li class="right" >
-          <a href="extra.html" title="Available Extensions"
+          <a href="extra.diskstorage.html" title="slimta.diskstorage"
              accesskey="P">previous</a> &nbsp; &nbsp;</li>
     <li><a href="../index.html">slimta 0.3.8 documentation</a> &raquo;</li>
 
@@ -66,31 +66,30 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="slimta-diskstorage">
-<h1>slimta.diskstorage<a class="headerlink" href="#slimta-diskstorage" title="Permalink to this headline">¶</a></h1>
-<p>This module is available in the <tt class="docutils literal"><span class="pre">python-slimta-diskstorage</span></tt> extension package.</p>
-<span class="target" id="module-slimta.diskstorage"></span><p>Package implementing the <a class="reference internal" href="slimta.queue.html#module-slimta.queue" title="slimta.queue"><tt class="xref py py-mod docutils literal"><span class="pre">queue</span></tt></a> storage system on disk. Disk
-reads and writes are built using the <a class="reference external" href="http://www.kernel.org/doc/man-pages/online/pages/man7/aio.7.html">aio</a> interface, provided in python by the
-<a class="reference external" href="https://github.com/felipecruz/pyaio">pyaio</a> project.</p>
+  <div class="section" id="slimta-redisstorage">
+<h1>slimta.redisstorage<a class="headerlink" href="#slimta-redisstorage" title="Permalink to this headline">¶</a></h1>
+<p>This module is available in the <tt class="docutils literal"><span class="pre">python-slimta-redisstorage</span></tt> extension
+package.</p>
+<span class="target" id="module-slimta.redisstorage"></span><p>Package implementing the <a class="reference internal" href="slimta.queue.html#module-slimta.queue" title="slimta.queue"><tt class="xref py py-mod docutils literal"><span class="pre">queue</span></tt></a> storage system using <a class="reference external" href="http://redis.io/">redis</a>.</p>
 <dl class="class">
-<dt id="slimta.diskstorage.DiskStorage">
-<em class="property">class </em><tt class="descclassname">slimta.diskstorage.</tt><tt class="descname">DiskStorage</tt><big>(</big><em>env_dir</em>, <em>meta_dir</em>, <em>tmp_dir=None</em><big>)</big><a class="headerlink" href="#slimta.diskstorage.DiskStorage" title="Permalink to this definition">¶</a></dt>
+<dt id="slimta.redisstorage.RedisStorage">
+<em class="property">class </em><tt class="descclassname">slimta.redisstorage.</tt><tt class="descname">RedisStorage</tt><big>(</big><em>host='localhost'</em>, <em>port=6379</em>, <em>db=0</em>, <em>password=None</em>, <em>socket_timeout=None</em>, <em>prefix='slimta:'</em><big>)</big><a class="headerlink" href="#slimta.redisstorage.RedisStorage" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="slimta.queue.html#slimta.queue.QueueStorage" title="slimta.queue.QueueStorage"><tt class="xref py py-class docutils literal"><span class="pre">slimta.queue.QueueStorage</span></tt></a></p>
 <p><a class="reference internal" href="slimta.queue.html#slimta.queue.QueueStorage" title="slimta.queue.QueueStorage"><tt class="xref py py-class docutils literal"><span class="pre">QueueStorage</span></tt></a> mechanism that stores <a class="reference internal" href="slimta.envelope.html#slimta.envelope.Envelope" title="slimta.envelope.Envelope"><tt class="xref py py-class docutils literal"><span class="pre">Envelope</span></tt></a> and queue metadata in
-two separate files on disk.</p>
+redis hashes.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>env_dir</strong> &#8211; Directory where queue envelope files are stored. These
-files may be large and will not be modified after initial
-writing.</li>
-<li><strong>meta_dir</strong> &#8211; Directory where queue meta files are stored. These files
-will be small and volatile.</li>
-<li><strong>tmp_dir</strong> &#8211; Directory that may be used as scratch space. New files are
-written here and then moved to their final destination.
-System temp directories are used by default.</li>
+<li><strong>host</strong> &#8211; Hostname of the redis server to connect to.</li>
+<li><strong>port</strong> &#8211; Port to connect to.</li>
+<li><strong>db</strong> &#8211; Database number to create keys in.</li>
+<li><strong>password</strong> &#8211; Optional password to authenticate with.</li>
+<li><strong>socket_timeout</strong> &#8211; Timeout, in seconds, for socket operations. If the
+timeout is hit, <a class="reference external" href="http://docs.python.org/library/socket.html#socket.timeout" title="(in Python v2.7)"><tt class="xref py py-exc docutils literal"><span class="pre">socket.timeout</span></tt></a> is raised.
+<tt class="docutils literal"><span class="pre">None</span></tt> disables the timeout.</li>
+<li><strong>prefix</strong> (<a class="reference external" href="http://docs.python.org/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; Any key created is prefixed with this string.</li>
 </ul>
 </td>
 </tr>
@@ -110,11 +109,11 @@ System temp directories are used by default.</li>
           <img class="logo" src="../_static/slimta.svg" alt="Logo"/>
         </a></p>
   <h4>Previous topic</h4>
-  <p class="topless"><a href="extra.html"
-                        title="previous chapter">Available Extensions</a></p>
+  <p class="topless"><a href="extra.diskstorage.html"
+                        title="previous chapter">slimta.diskstorage</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="extra.redisstorage.html"
-                        title="next chapter">slimta.redisstorage</a></p>
+  <p class="topless"><a href="extra.piperelay.html"
+                        title="next chapter">slimta.piperelay</a></p>
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
@@ -144,10 +143,10 @@ System temp directories are used by default.</li>
           <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> &nbsp; &nbsp;</li>
         <li class="right" >
-          <a href="extra.redisstorage.html" title="slimta.redisstorage"
+          <a href="extra.piperelay.html" title="slimta.piperelay"
              >next</a> &nbsp; &nbsp;</li>
         <li class="right" >
-          <a href="extra.html" title="Available Extensions"
+          <a href="extra.diskstorage.html" title="slimta.diskstorage"
              >previous</a> &nbsp; &nbsp;</li>
     <li><a href="../index.html">slimta 0.3.8 documentation</a> &raquo;</li>
 

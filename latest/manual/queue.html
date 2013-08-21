@@ -106,9 +106,12 @@ for live mail systems. Install it with:</p>
 </div>
 <div class="section" id="redis">
 <h3>Redis<a class="headerlink" href="#redis" title="Permalink to this headline">¶</a></h3>
-<p>The future plan is to have a <a class="reference internal" href="../api/slimta.queue.html#slimta.queue.QueueStorage" title="slimta.queue.QueueStorage"><tt class="xref py py-class docutils literal"><span class="pre">QueueStorage</span></tt></a> implementation which uses <a class="reference internal" href="#redis">redis</a> as
-the back-end. This will essentially &#8220;out-source&#8221; the difficult problem of
-balancing and disconnecting storage and processing.</p>
+<p>The <a class="reference internal" href="../api/extra.redisstorage.html#slimta.redisstorage.RedisStorage" title="slimta.redisstorage.RedisStorage"><tt class="xref py py-class docutils literal"><span class="pre">RedisStorage</span></tt></a> class implements a <a class="reference internal" href="../api/slimta.queue.html#slimta.queue.QueueStorage" title="slimta.queue.QueueStorage"><tt class="xref py py-class docutils literal"><span class="pre">QueueStorage</span></tt></a>
+mechanism that uses <a class="reference internal" href="#redis">redis</a> as the backend. This essentially out-sources the
+difficult problem of ensuring data resiliency if the system goes down before a
+message is delivered. Install it with:</p>
+<div class="highlight-python"><pre>pip install python-slimta-redisstorage</pre>
+</div>
 </div>
 </div>
 <div class="section" id="delivery-attempts">
