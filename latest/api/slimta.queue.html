@@ -8,7 +8,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>slimta.queue &mdash; slimta 0.3.8 documentation</title>
+    <title>slimta.queue &mdash; slimta 0.3.9 documentation</title>
     
     <link rel="stylesheet" href="../_static/cloud.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -17,7 +17,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.3.8',
+        VERSION:     '0.3.9',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -28,7 +28,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/jquery.cookie.js"></script>
     <script type="text/javascript" src="../_static/cloud.js"></script>
-    <link rel="top" title="slimta 0.3.8 documentation" href="../index.html" />
+    <link rel="top" title="slimta 0.3.9 documentation" href="../index.html" />
     <link rel="up" title="slimta" href="slimta.html" />
     <link rel="next" title="slimta.queue.dict" href="slimta.queue.dict.html" />
     <link rel="prev" title="slimta.edge.wsgi" href="slimta.edge.wsgi.html" /> 
@@ -52,7 +52,7 @@
         <li class="right" >
           <a href="slimta.edge.wsgi.html" title="slimta.edge.wsgi"
              accesskey="P">previous</a> &nbsp; &nbsp;</li>
-    <li><a href="../index.html">slimta 0.3.8 documentation</a> &raquo;</li>
+    <li><a href="../index.html">slimta 0.3.9 documentation</a> &raquo;</li>
 
           <li><a href="../api.html" >API Reference</a> &raquo;</li>
           <li><a href="slimta.html" accesskey="U">slimta</a> &raquo;</li> 
@@ -104,7 +104,7 @@ with the message should start at zero.</p>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Unique identifier string for the message in queue.</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Raises :</th><td class="field-body"><p class="first last"><a class="reference internal" href="#slimta.queue.QueueError" title="slimta.queue.QueueError"><tt class="xref py py-class docutils literal"><span class="pre">QueueError</span></tt></a>.</p>
+<tr class="field-odd field"><th class="field-name">Raises :</th><td class="field-body"><p class="first last"><a class="reference internal" href="#slimta.queue.QueueError" title="slimta.queue.QueueError"><tt class="xref py py-class docutils literal"><span class="pre">QueueError</span></tt></a></p>
 </td>
 </tr>
 </tbody>
@@ -125,7 +125,7 @@ with the message should start at zero.</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Raises :</th><td class="field-body"><p class="first last"><a class="reference internal" href="#slimta.queue.QueueError" title="slimta.queue.QueueError"><tt class="xref py py-class docutils literal"><span class="pre">QueueError</span></tt></a>.</p>
+<tr class="field-even field"><th class="field-name">Raises :</th><td class="field-body"><p class="first last"><a class="reference internal" href="#slimta.queue.QueueError" title="slimta.queue.QueueError"><tt class="xref py py-class docutils literal"><span class="pre">QueueError</span></tt></a></p>
 </td>
 </tr>
 </tbody>
@@ -145,7 +145,7 @@ message.</p>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The new number of message delivery attempts.</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Raises :</th><td class="field-body"><a class="reference internal" href="#slimta.queue.QueueError" title="slimta.queue.QueueError"><tt class="xref py py-class docutils literal"><span class="pre">QueueError</span></tt></a>.</td>
+<tr class="field-odd field"><th class="field-name">Raises :</th><td class="field-body"><a class="reference internal" href="#slimta.queue.QueueError" title="slimta.queue.QueueError"><tt class="xref py py-class docutils literal"><span class="pre">QueueError</span></tt></a></td>
 </tr>
 </tbody>
 </table>
@@ -163,7 +163,7 @@ message.</p>
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Iterable that yields tuples of the form <tt class="docutils literal"><span class="pre">(timestamp,</span> <span class="pre">id)</span></tt>
 for each message in storage.</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Raises :</th><td class="field-body"><a class="reference internal" href="#slimta.queue.QueueError" title="slimta.queue.QueueError"><tt class="xref py py-class docutils literal"><span class="pre">QueueError</span></tt></a>.</td>
+<tr class="field-even field"><th class="field-name">Raises :</th><td class="field-body"><a class="reference internal" href="#slimta.queue.QueueError" title="slimta.queue.QueueError"><tt class="xref py py-class docutils literal"><span class="pre">QueueError</span></tt></a></td>
 </tr>
 </tbody>
 </table>
@@ -178,7 +178,7 @@ identifier sring.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>id</strong> &#8211; The unique identfier string of the requested <a class="reference internal" href="slimta.envelope.html#slimta.envelope.Envelope" title="slimta.envelope.Envelope"><tt class="xref py py-class docutils literal"><span class="pre">Envelope</span></tt></a>.</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>id</strong> &#8211; The unique identifier string of the requested <a class="reference internal" href="slimta.envelope.html#slimta.envelope.Envelope" title="slimta.envelope.Envelope"><tt class="xref py py-class docutils literal"><span class="pre">Envelope</span></tt></a>.</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Tuple with the <a class="reference internal" href="slimta.envelope.html#slimta.envelope.Envelope" title="slimta.envelope.Envelope"><tt class="xref py py-class docutils literal"><span class="pre">Envelope</span></tt></a> object and number of attempts.</td>
 </tr>
@@ -198,9 +198,48 @@ been successfully delivered or delivery has permanently failed.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>id</strong> &#8211; The unique identfier string of the <a class="reference internal" href="slimta.envelope.html#slimta.envelope.Envelope" title="slimta.envelope.Envelope"><tt class="xref py py-class docutils literal"><span class="pre">Envelope</span></tt></a> to remove.</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>id</strong> &#8211; The unique identifier string of the <a class="reference internal" href="slimta.envelope.html#slimta.envelope.Envelope" title="slimta.envelope.Envelope"><tt class="xref py py-class docutils literal"><span class="pre">Envelope</span></tt></a> to remove.</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Raises :</th><td class="field-body"><a class="reference internal" href="#slimta.queue.QueueError" title="slimta.queue.QueueError"><tt class="xref py py-class docutils literal"><span class="pre">QueueError</span></tt></a>.</td>
+<tr class="field-even field"><th class="field-name">Raises :</th><td class="field-body"><a class="reference internal" href="#slimta.queue.QueueError" title="slimta.queue.QueueError"><tt class="xref py py-class docutils literal"><span class="pre">QueueError</span></tt></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="slimta.queue.QueueStorage.notify">
+<tt class="descname">notify</tt><big>(</big><em>id</em>, <em>timestamp</em><big>)</big><a class="headerlink" href="#slimta.queue.QueueStorage.notify" title="Permalink to this definition">¶</a></dt>
+<dd><p>If messages are not received in the same process as queue delivery,
+the storage mechanism needs a way to notify the queue delivery process
+that a new message has been stored and is ready to deliver.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>id</strong> &#8211; The unique identifier string of the <a class="reference internal" href="slimta.envelope.html#slimta.envelope.Envelope" title="slimta.envelope.Envelope"><tt class="xref py py-class docutils literal"><span class="pre">Envelope</span></tt></a> that has
+already been stored and needs its first delivery attempt.</li>
+<li><strong>timestamp</strong> &#8211; Timestamp ofthe new message&#8217;s next delivery attempt.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="slimta.queue.QueueStorage.wait">
+<tt class="descname">wait</tt><big>(</big><big>)</big><a class="headerlink" href="#slimta.queue.QueueStorage.wait" title="Permalink to this definition">¶</a></dt>
+<dd><p>If messages are not being delivered from the same process in which
+they were received, the storage mechanism needs a way to wait until it
+is notified that a new message has been stored.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A tuple of the timestamp and unique identifier string of a new
+message in storage. If <tt class="docutils literal"><span class="pre">None</span></tt> is returned indicating a
+timeout, this method is simply called again.</td>
 </tr>
 </tbody>
 </table>
@@ -344,7 +383,7 @@ regardless of their retry timers.</p>
         <li class="right" >
           <a href="slimta.edge.wsgi.html" title="slimta.edge.wsgi"
              >previous</a> &nbsp; &nbsp;</li>
-    <li><a href="../index.html">slimta 0.3.8 documentation</a> &raquo;</li>
+    <li><a href="../index.html">slimta 0.3.9 documentation</a> &raquo;</li>
 
           <li><a href="../api.html" >API Reference</a> &raquo;</li>
           <li><a href="slimta.html" >slimta</a> &raquo;</li> 
