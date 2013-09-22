@@ -207,27 +207,6 @@ been successfully delivered or delivery has permanently failed.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="slimta.queue.QueueStorage.notify">
-<tt class="descname">notify</tt><big>(</big><em>id</em>, <em>timestamp</em><big>)</big><a class="headerlink" href="#slimta.queue.QueueStorage.notify" title="Permalink to this definition">¶</a></dt>
-<dd><p>If messages are not received in the same process as queue delivery,
-the storage mechanism needs a way to notify the queue delivery process
-that a new message has been stored and is ready to deliver.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>id</strong> &#8211; The unique identifier string of the <a class="reference internal" href="slimta.envelope.html#slimta.envelope.Envelope" title="slimta.envelope.Envelope"><tt class="xref py py-class docutils literal"><span class="pre">Envelope</span></tt></a> that has
-already been stored and needs its first delivery attempt.</li>
-<li><strong>timestamp</strong> &#8211; Timestamp ofthe new message&#8217;s next delivery attempt.</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
 <dt id="slimta.queue.QueueStorage.wait">
 <tt class="descname">wait</tt><big>(</big><big>)</big><a class="headerlink" href="#slimta.queue.QueueStorage.wait" title="Permalink to this definition">¶</a></dt>
 <dd><p>If messages are not being delivered from the same process in which
@@ -249,7 +228,7 @@ timeout, this method is simply called again.</td>
 
 <dl class="class">
 <dt id="slimta.queue.Queue">
-<em class="property">class </em><tt class="descclassname">slimta.queue.</tt><tt class="descname">Queue</tt><big>(</big><em>store</em>, <em>relay</em>, <em>backoff=None</em>, <em>bounce_factory=None</em>, <em>store_pool=None</em>, <em>relay_pool=None</em><big>)</big><a class="headerlink" href="#slimta.queue.Queue" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">slimta.queue.</tt><tt class="descname">Queue</tt><big>(</big><em>store</em>, <em>relay=None</em>, <em>backoff=None</em>, <em>bounce_factory=None</em>, <em>store_pool=None</em>, <em>relay_pool=None</em><big>)</big><a class="headerlink" href="#slimta.queue.Queue" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">gevent.greenlet.Greenlet</span></tt></p>
 <p>Manages the queue of <a class="reference internal" href="slimta.envelope.html#slimta.envelope.Envelope" title="slimta.envelope.Envelope"><tt class="xref py py-class docutils literal"><span class="pre">Envelope</span></tt></a> objects waiting for delivery. This is
 not a standard FIFO queue, a message&#8217;s place in the queue depends entirely
@@ -260,7 +239,9 @@ on the timestamp of its next delivery attempt.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
 <li><strong>store</strong> &#8211; Object implementing <a class="reference internal" href="#slimta.queue.QueueStorage" title="slimta.queue.QueueStorage"><tt class="xref py py-class docutils literal"><span class="pre">QueueStorage</span></tt></a>.</li>
-<li><strong>relay</strong> &#8211; <a class="reference internal" href="slimta.relay.html#slimta.relay.Relay" title="slimta.relay.Relay"><tt class="xref py py-class docutils literal"><span class="pre">Relay</span></tt></a> object used to attempt message deliveries.</li>
+<li><strong>relay</strong> &#8211; <a class="reference internal" href="slimta.relay.html#slimta.relay.Relay" title="slimta.relay.Relay"><tt class="xref py py-class docutils literal"><span class="pre">Relay</span></tt></a> object used to attempt message deliveries. If this
+is not given, no deliveries will be attempted on received
+messages.</li>
 <li><strong>backoff</strong> &#8211; Function that, given an <a class="reference internal" href="slimta.envelope.html#slimta.envelope.Envelope" title="slimta.envelope.Envelope"><tt class="xref py py-class docutils literal"><span class="pre">Envelope</span></tt></a> and number of delivery
 attempts, will return the number of seconds before the next
 attempt. If it returns <tt class="docutils literal"><span class="pre">None</span></tt>, the message will be
