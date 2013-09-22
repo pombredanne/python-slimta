@@ -174,6 +174,37 @@ so that it can be written to often.</p>
 </li>
 </ul>
 </div>
+<div class="section" id="redis-queues">
+<h2><tt class="docutils literal"><span class="pre">redis</span></tt> Queues<a class="headerlink" href="#redis-queues" title="Permalink to this headline">¶</a></h2>
+<p>With this queue type, messages and their metadata are stored as a hash in a
+local or remote redis instance. Additionally, a queue is maintained in redis of
+pending new message IDs, meaning this mechanism can receive and deliver messages
+across processes. This queue type is configured with the following keys:</p>
+<ul>
+<li><p class="first"><tt class="docutils literal"><span class="pre">host</span></tt>: String</p>
+<p>This is the hostname of the redis instance to connect to and use as queue
+storage. By default, <tt class="docutils literal"><span class="pre">localhost</span></tt> is used.</p>
+</li>
+<li><p class="first"><tt class="docutils literal"><span class="pre">port</span></tt>: Integer</p>
+<p>This is the port to connect to on the redis instance. By default, <tt class="docutils literal"><span class="pre">6379</span></tt> is
+used.</p>
+</li>
+<li><p class="first"><tt class="docutils literal"><span class="pre">db</span></tt>: Integer</p>
+<p>Upon connection, this is the database number to <a class="reference external" href="http://redis.io/commands/select">SELECT</a> before doing anything
+else. By default, <tt class="docutils literal"><span class="pre">0</span></tt> is used.</p>
+</li>
+<li><p class="first"><tt class="docutils literal"><span class="pre">password</span></tt>: String</p>
+<p>If given, the <a class="reference external" href="http://redis.io/commands/auth">AUTH</a> command is called with this string before doing anything
+else with the connection.</p>
+</li>
+<li><p class="first"><tt class="docutils literal"><span class="pre">prefix</span></tt>: String</p>
+<p>This string is prefixed to every key created by the redis storage engine. This
+can be used to isolate keys from others in the system, to allow for multiple
+redis storage engines to run in the same database, or just to make keys more
+recognizable. By default, <tt class="docutils literal"><span class="pre">slimta:</span></tt> is used.</p>
+</li>
+</ul>
+</div>
 <div class="section" id="proxy-queues">
 <h2><tt class="docutils literal"><span class="pre">proxy</span></tt> Queues<a class="headerlink" href="#proxy-queues" title="Permalink to this headline">¶</a></h2>
 <p>The <tt class="docutils literal"><span class="pre">&quot;proxy&quot;</span></tt> queue type is not a queue at all, but rather a method of
@@ -254,6 +285,7 @@ should use for message delivery:</p>
 <li><a class="reference internal" href="#delivery-retry-behavior">Delivery Retry Behavior</a></li>
 <li><a class="reference internal" href="#memory-queues"><tt class="docutils literal"><span class="pre">memory</span></tt> Queues</a></li>
 <li><a class="reference internal" href="#disk-queues"><tt class="docutils literal"><span class="pre">disk</span></tt> Queues</a></li>
+<li><a class="reference internal" href="#redis-queues"><tt class="docutils literal"><span class="pre">redis</span></tt> Queues</a></li>
 <li><a class="reference internal" href="#proxy-queues"><tt class="docutils literal"><span class="pre">proxy</span></tt> Queues</a></li>
 <li><a class="reference internal" href="#celery-queues"><tt class="docutils literal"><span class="pre">celery</span></tt> Queues</a></li>
 <li><a class="reference internal" href="#custom-queues"><tt class="docutils literal"><span class="pre">custom</span></tt> Queues</a></li>
