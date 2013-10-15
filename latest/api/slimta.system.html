@@ -66,9 +66,9 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="slimta-system">
-<h1>slimta.system<a class="headerlink" href="#slimta-system" title="Permalink to this headline">¶</a></h1>
-<span class="target" id="module-slimta.system"></span><p>Contains functions to simplify the usual daemonization procedures for long-
+  <div class="section" id="module-slimta.system">
+<span id="slimta-system"></span><h1>slimta.system<a class="headerlink" href="#module-slimta.system" title="Permalink to this headline">¶</a></h1>
+<p>Contains functions to simplify the usual daemonization procedures for long-
 running processes.</p>
 <dl class="function">
 <dt id="slimta.system.daemonize">
@@ -122,6 +122,26 @@ purposes, once root-only ports like 25 are opened.</p>
 <li><strong>group</strong> &#8211; group name (from /etc/group) or GID.</li>
 </ul>
 </td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="slimta.system.PidFile">
+<em class="property">class </em><tt class="descclassname">slimta.system.</tt><tt class="descname">PidFile</tt><big>(</big><em>filename=None</em><big>)</big><a class="headerlink" href="#slimta.system.PidFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+<p>Context manager which creates a PID file containing the current process
+id, runs the context, and then removes the PID file.</p>
+<p>An <tt class="xref py py-exc docutils literal"><span class="pre">OSError</span></tt> exceptions when creating the PID file will be
+propogated without executing the context.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>filename</strong> &#8211; The filename to use for the PID file. If <tt class="docutils literal"><span class="pre">None</span></tt> is
+given, the context is simply executed with no PID file
+created.</td>
 </tr>
 </tbody>
 </table>
