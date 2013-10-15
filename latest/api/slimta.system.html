@@ -8,7 +8,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>slimta.system &mdash; slimta 0.3.12 documentation</title>
+    <title>slimta.system &mdash; slimta 0.3.13 documentation</title>
     
     <link rel="stylesheet" href="../_static/cloud.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -17,7 +17,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.3.12',
+        VERSION:     '0.3.13',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -28,7 +28,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/jquery.cookie.js"></script>
     <script type="text/javascript" src="../_static/cloud.js"></script>
-    <link rel="top" title="slimta 0.3.12 documentation" href="../index.html" />
+    <link rel="top" title="slimta 0.3.13 documentation" href="../index.html" />
     <link rel="up" title="slimta" href="slimta.html" />
     <link rel="next" title="Available Extensions" href="extra.html" />
     <link rel="prev" title="slimta.util.dnsbl" href="slimta.util.dnsbl.html" /> 
@@ -52,7 +52,7 @@
         <li class="right" >
           <a href="slimta.util.dnsbl.html" title="slimta.util.dnsbl"
              accesskey="P">previous</a> &nbsp; &nbsp;</li>
-    <li><a href="../index.html">slimta 0.3.12 documentation</a> &raquo;</li>
+    <li><a href="../index.html">slimta 0.3.13 documentation</a> &raquo;</li>
 
           <li><a href="../api.html" >API Reference</a> &raquo;</li>
           <li><a href="slimta.html" accesskey="U">slimta</a> &raquo;</li> 
@@ -66,9 +66,9 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="module-slimta.system">
-<span id="slimta-system"></span><h1>slimta.system<a class="headerlink" href="#module-slimta.system" title="Permalink to this headline">¶</a></h1>
-<p>Contains functions to simplify the usual daemonization procedures for long-
+  <div class="section" id="slimta-system">
+<h1>slimta.system<a class="headerlink" href="#slimta-system" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="module-slimta.system"></span><p>Contains functions to simplify the usual daemonization procedures for long-
 running processes.</p>
 <dl class="function">
 <dt id="slimta.system.daemonize">
@@ -127,27 +127,6 @@ purposes, once root-only ports like 25 are opened.</p>
 </table>
 </dd></dl>
 
-<dl class="function">
-<dt id="slimta.system.pid_file">
-<tt class="descclassname">slimta.system.</tt><tt class="descname">pid_file</tt><big>(</big><em>*args</em>, <em>**kwds</em><big>)</big><a class="headerlink" href="#slimta.system.pid_file" title="Permalink to this definition">¶</a></dt>
-<dd><p>Context manager which creates a PID file containing the current process
-id, runs the context, and then removes the PID file.</p>
-<p>An <tt class="xref py py-exc docutils literal"><span class="pre">OSError</span></tt> exceptions when creating the PID file will be
-propogated without executing the context.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>filename</strong> &#8211; The filename to use for the PID file. If <tt class="docutils literal"><span class="pre">None</span></tt> is
-given, the context is simply executed with no PID file
-created.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Raises :</th><td class="field-body"><tt class="xref py py-exc docutils literal"><span class="pre">OSError</span></tt></td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
 </div>
 
 
@@ -199,7 +178,7 @@ created.</td>
         <li class="right" >
           <a href="slimta.util.dnsbl.html" title="slimta.util.dnsbl"
              >previous</a> &nbsp; &nbsp;</li>
-    <li><a href="../index.html">slimta 0.3.12 documentation</a> &raquo;</li>
+    <li><a href="../index.html">slimta 0.3.13 documentation</a> &raquo;</li>
 
           <li><a href="../api.html" >API Reference</a> &raquo;</li>
           <li><a href="slimta.html" >slimta</a> &raquo;</li> 
