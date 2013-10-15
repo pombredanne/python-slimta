@@ -127,6 +127,27 @@ purposes, once root-only ports like 25 are opened.</p>
 </table>
 </dd></dl>
 
+<dl class="function">
+<dt id="slimta.system.pid_file">
+<tt class="descclassname">slimta.system.</tt><tt class="descname">pid_file</tt><big>(</big><em>*args</em>, <em>**kwds</em><big>)</big><a class="headerlink" href="#slimta.system.pid_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Context manager which creates a PID file containing the current process
+id, runs the context, and then removes the PID file.</p>
+<p>An <tt class="xref py py-exc docutils literal"><span class="pre">OSError</span></tt> exceptions when creating the PID file will be
+propogated without executing the context.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>filename</strong> &#8211; The filename to use for the PID file. If <tt class="docutils literal"><span class="pre">None</span></tt> is
+given, the context is simply executed with no PID file
+created.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises :</th><td class="field-body"><tt class="xref py py-exc docutils literal"><span class="pre">OSError</span></tt></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 </div>
 
 
